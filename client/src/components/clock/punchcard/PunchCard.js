@@ -46,8 +46,8 @@ const StyledDiv = styled.div`
 `
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: space-between;
-  padding: 1rem;
+  justify-content: space-between;
+  border: 1px solid grey;
+  background: white;
 `
 export default PunchCard
