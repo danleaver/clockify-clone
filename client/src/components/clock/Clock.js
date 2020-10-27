@@ -7,6 +7,7 @@ import DailyTotal from './DailyTotal';
 import { CardContext } from '../../providers/CardProvider';
 import CardDetails from '../card/CardDetails';
 import Project from '../project/Project';
+import PunchList from '../punch-list/PunchList';
 
 const Clock = () => {
   const { currentCard, setCurrentCard, newCard, setNewCard, ...context } = useContext(CardContext);
@@ -107,6 +108,7 @@ const Clock = () => {
     setNewCard(null)
     setShowHistory(!showHistory)
   }
+  
   return (
    <Wrapper>
      <NewPunchDiv>
@@ -138,14 +140,14 @@ const Clock = () => {
             </>
         }
       </NewPunchDiv>
-      {/* <div>
+      <PunchList />
+      <div>
         <DailyTotal />
-      </div> */}
+      </div>
       {/* <ButtonDiv>
         <button onClick={toggleHistory}>History</button>
       </ButtonDiv> */}
     <History newCard={newCard}/>
-
    </Wrapper>
   )
 }
@@ -165,7 +167,6 @@ const Flex = styled.div`
   align-items: center;
   flex-shrink: 0;
 `
-
 const ButtonDiv = styled.div`
   display: flex;
   padding: 1rem;
@@ -175,7 +176,7 @@ const StyledButton = styled.button`
   color: white;
   border: none;
   padding: 0.5rem 0;
-  border-radius: 5%;
+  border-radius: 2px;
   width: 80px;
 
   ${props => props.clockedIn 
